@@ -18,21 +18,30 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-// const cards = document.querySelector('.cards-container');
+const cards = document.querySelector('.cards-container');
+console.log(cards)
     
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(data => {
-        console.log(data)
-        data.data.articles.forEach(items => {
-            createCards(items)
+    .then(response => {
+        console.log(response)
+        console.log(response.data.articles);
+
+        const newArticles = response.data.articles;
+        for (topic in newArticles) {
+            console.log(topic);
+        }
+        newArray[topic].forEach(articles => {
+            cards.appendChild(createCards(articles));
+            // response.data.articles[i].forEach( articles => {
+            //     cards.appendChild(createCards(articles));
+            })
         })
-    })
+   
     .catch(error => {
         console.log('Card Data Not Returned', error);
     });
 
-    const mainCard = document.querySelector('.cards-container');
-
+    
     function createCards(data) {
         const newsCards = document.createElement('div'),
             newsHeadline = document.createElement('div'),
@@ -58,3 +67,29 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
         return createCards;
     }
+
+
+
+
+// const cards = document.querySelector('.cards-container');
+// let newArray = [];
+    
+// axios.get('https://lambda-times-backend.herokuapp.com/articles')
+//     .then(response => {
+//         console.log(response)
+//         console.log(response.data.articles);
+
+//         const newArticles = response.data.articles;
+//         for (topic in newArticles) {
+//             console.log(topic);
+//         }
+//         newArray[topic].forEach(articles => {
+//             cards.appendChild(createCards(articles));
+//             // response.data.articles[i].forEach( articles => {
+//             //     cards.appendChild(createCards(articles));
+//             })
+//         })
+   
+//     .catch(error => {
+//         console.log('Card Data Not Returned', error);
+//     // })

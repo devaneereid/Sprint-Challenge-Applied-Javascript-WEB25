@@ -11,13 +11,7 @@
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(data => {
         console.log(data)
-        // const tabsData = data.data;
-        // console.log(tabsData);
-        
-        // const tabs = document.querySelector('.tab');
-        // const tabInfo = createTabs(tabsData);
-        // tabs.appendChild(tabInfo);
-
+      
         data.data.topics.forEach(items => {
             createTabs(items)
         })
