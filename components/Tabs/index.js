@@ -31,7 +31,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
             newsTabs.textContent = data;
 
-        return createTabs;
+        return newsTabs;
     }
     
 // mainTabs.appendChild(createTabs());

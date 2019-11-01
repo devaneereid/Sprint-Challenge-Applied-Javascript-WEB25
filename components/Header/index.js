@@ -31,6 +31,6 @@ function Header() {
         newsTitle.textContent = "Lambda Times";
         newsTemp.textContent = "98°";
 
-    return Header;
+    return newsHeader;
 }
 mainHeader.appendChild(Header());
