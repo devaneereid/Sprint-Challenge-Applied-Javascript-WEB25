@@ -12,10 +12,11 @@
 const mainHeader = document.querySelector('.header-container');
 
 function Header() {
-    const newsHeader = document.createElement('div');
-    const newsDate = document.createElement('span');
-    const newsTitle = document.createElement('h1');
-    const newsTemp = document.createElement('span');
+
+    const newsHeader = document.createElement('div'),
+        newsDate = document.createElement('span'),
+        newsTitle = document.createElement('h1'),
+        newsTemp = document.createElement('span');
 
         newsHeader.appendChild(newsDate);
         newsHeader.appendChild(newsTitle);
