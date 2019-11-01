@@ -56,7 +56,5 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
             newsImg.src = data.authorPhoto;
             authorName.textContent = `By: ${data.authorName}`;
 
-
         return createCards;
-
     }
